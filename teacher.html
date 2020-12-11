@@ -120,7 +120,7 @@ function sendMessage() {
         var classname = document.getElementById("cls").value;
         // save in database
         firebase.database().ref("messages/"+uid).push().set({
-            "classname": classname,
+            "class": classname,
             "time": time
         });
         document.getElementById("cls").value="";
@@ -134,8 +134,8 @@ function sendMessage() {
         console.log("heyheyhey");
         var html = "";
         // give each message a unique ID
-            html += "<div class='col-3' style='padding:30px;border-radius:6px;background-color:#000;color:#fff;margin-right:8px;' id='classname-" + snapshot.key + "'>";
-        html += snapshot.val().classname;
+            html += "<div class='col-3' style='margin:20px 0px;padding:0px;border-radius:6px;background-color:#000;color:#fff;margin-right:8px;' id='classname2-" + snapshot.key + "'>";
+        html += snapshot.val().class;
             html +="<div style='width:100%;display:flex;flex-direction:row'><div style='float:left;'><button class='btn-success'>copy link</button></div><div style='float:left;'>"
             html += "<i style='cursor:pointer;margin-right:10px;' class='fa fa-trash' data-id='" + snapshot.key + "' onclick='deleteMessage(this);'></i></div></div>";
         
@@ -159,7 +159,8 @@ function deleteMessage(self) {
 // attach listener for delete message
 firebase.database().ref("messages/"+uid).on("child_removed", function (snapshot) {
     // remove message node
-document.getElementById("classname-" + snapshot.key).innerHTML = "";
+document.getElementById("classname2-" + snapshot.key).innerHTML = "";
+document.getElementById("classname2-" + snapshot.key).style.display = "none";
 });
 </script>
     </body>

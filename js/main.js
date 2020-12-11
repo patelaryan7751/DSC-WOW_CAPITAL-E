@@ -111,7 +111,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
            }
        else{
-           var cliref = firebase.database().ref('credential/');
+           var cliref = firebase.database().ref('crimecredential/');
        cliref.orderByChild("email").equalTo(user.email).on("value", function(data){
           
            if(data.val()){

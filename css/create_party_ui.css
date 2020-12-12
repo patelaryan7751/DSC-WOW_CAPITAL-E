@@ -31,12 +31,7 @@
     
   font-family: Manrope-Regular, sans-serif;
 
-background: #9796f0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  /*background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);*/
-  /*background-image: linear-gradient(to right,#8010ff 0% , #ce9ae0 100%);*/
+background:#000;
 }
         
         }
@@ -45,14 +40,7 @@ background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, F
 body, html {
     
   font-family: Manrope-Regular, sans-serif;
-    background-image:url(../bg_images/Untitled-1-01.jpg) ;
-    background-repeat: no-repeat;
-/*background: #9796f0;  /* fallback for old browsers */
-/*background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
-/*background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  /*background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);*/
-  /*background-image: linear-gradient(to right,#8010ff 0% , #ce9ae0 100%);*/
+    background:#000;
 }
 }
 
@@ -186,14 +174,7 @@ body, html {
     justify-content: center;
     align-items: center;
     padding: 15px;
-    /*background: url(../images/TV.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1620px 900px;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);*/
+
   }
   
   .wrap-login100 {

@@ -23,9 +23,6 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
 <div class="row">
 <div class="col-5">
         <h5 class="card-field card-title" style="font-weight:700;">${newVoke.roomname}</h5>
-
-
-
 </div>
 <div class="col-7" style="margin-left=90%">
        <img src="images/assigno.png" class="img-fluid" width="100px" height="25px"> 
@@ -34,10 +31,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
           
 
 
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}" class="mt-2 btn btn-success">Open</a>
-<div class="col-7">
-<p>Link:https://patelaryan7751.github.io/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}</p>
-</div>
+<a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
       </div>
     </div>`
           document.getElementById("classe").innerHTML += html;
@@ -46,10 +40,10 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
 
 var us=document.getElementById("user");
 us.textContent=sessionStorage.getItem("emails");
-document.getElementById("create").addEventListener("click",cretef);
-function cretef(){
+document.getElementById("join").addEventListener("click",joinf);
+function joinf(){
     
-     window.open('createclass.html','_self');
+     window.open('joinclass.html','_self');
 
 }
 

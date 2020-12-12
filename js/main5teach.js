@@ -57,9 +57,8 @@
 })(jQuery);
 document.querySelector('#createroom').onclick = function(){
       var room = document.querySelector('#phnno').value;
-        if(room!=null && room!="" && room!=" "){
-        
-            
+     var assname = document.querySelector('#phnno1').value;
+        if(room!=null && room!="" && room!=" " && assname!=null && assname!="" && assname!=" "){
         var pq=document.getElementById("loadar");
     pq.style.display="block";
         var pqi=document.getElementById("demo1");
@@ -81,9 +80,10 @@ document.querySelector('#createroom').onclick = function(){
              
     
         
-         var tgref=firebase.database().ref(`${sessionStorage.getItem("uids")}/${document.getElementById("phnno").value}`);
+         var tgref=firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment/${document.getElementById("phnno1").value}/`);
     var data={
-        roomname:document.getElementById("phnno").value
+        link:document.getElementById("phnno").value,
+        assname:document.getElementById("phnno1").value
         
          }
      tgref.set(data).then(function(){
@@ -91,10 +91,11 @@ document.querySelector('#createroom').onclick = function(){
         
     
             if(document.getElementById("phnno").value!=null && document.getElementById("phnno").value!="" && 
-              document.getElementById("phnno").value!=" "){
+              document.getElementById("phnno").value!=" " && document.getElementById("phnno1").value!=null && document.getElementById("phnno1").value!="" && 
+              document.getElementById("phnno1").value!=" "){
                  var pq=document.getElementById("loadar");
     pq.style.display="none";
-            window.open('teacher.html','_self');
+            window.open(`${sessionStorage.getItem("link")}`,'_self');
             }
         
         

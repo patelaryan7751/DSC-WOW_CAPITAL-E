@@ -2,7 +2,13 @@
 console.log("h");
 var us=document.getElementById("user");
 us.textContent=sessionStorage.getItem("emails");
-var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment`);
+var url_string1=window.location.href;
+        
+          var url_string=decodeURI(url_string1);
+         console.log(url_string);
+var url= new URL(url_string);
+var assgn= url.searchParams.get("assname");
+var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment/${assgn}/submission`);
      hjcordiref.orderByChild('assname').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
@@ -14,7 +20,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
       <div class="card-body"  style="background-color: aliceblue">
 <div class="row">
 <div class="col-5">
-        <h5 class="card-field card-title" style="font-weight:700;">Assignmennt Name: ${newVoke.assname}</h5>
+        <h5 class="card-field card-title" style="font-weight:700;">Eamil: ${newVoke.email}</h5>
 
 
 
@@ -27,7 +33,6 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
 
 
 <a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/submission.html?assname=${newVoke.assname}" class="mt-2 btn btn-success">Submissions</a>
 
       </div>
     </div>

@@ -9,7 +9,7 @@ var url_string1=window.location.href;
 var url= new URL(url_string);
 var assgn= url.searchParams.get("assname");
 var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment/${assgn}/submission`);
-     hjcordiref.orderByChild('assname').on("child_added", function(data){
+     hjcordiref.orderByChild('email').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
          if(newVoke.email){

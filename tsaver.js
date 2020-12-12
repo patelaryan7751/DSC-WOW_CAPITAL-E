@@ -42,12 +42,10 @@ messaging.getToken().then((currentToken) => {
       
       var cordiRef = firebase.database().ref(`${sessionStorage.getItem("uids")}`);
     var data={
-        fcmtoken:currentToken,
-        email:sessionStorage.getItem("emails"),
-        uid:sessionStorage.getItem("uids")
+        fcmtokenteacher:currentToken
         
     }
-    cordiRef.set(data).then(function(){
+    cordiRef.update(data).then(function(){
       console.log(currentToken);
     sendTokenToServer(currentToken);
          

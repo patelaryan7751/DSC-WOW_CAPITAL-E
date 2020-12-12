@@ -17,7 +17,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
      hjcordiref.orderByChild('roomname').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
-         var uri=`https://patelaryan7751.github.io/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}`;
+         var uri=`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}`;
          var res=encodeURI(uri);
          i=i+1;
          var html = "";
@@ -38,7 +38,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
           
 
 
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}" class="mt-2 btn btn-success">Open</a>
+<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}" class="mt-2 btn btn-success">Open</a>
 <br>
 
 <input type="text" value="${res}" 

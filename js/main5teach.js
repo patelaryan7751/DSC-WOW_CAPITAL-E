@@ -128,16 +128,17 @@ document.querySelector('#createroom').onclick = function(){
 
         
 window.alert("SENT!!!");
+         var pq=document.getElementById("loadar");
+    pq.style.display="none";
     
 });
      
     
     }
      
-                 var pq=document.getElementById("loadar");
-    pq.style.display="none";
+                 
                 
-            window.open(`${sessionStorage.getItem("link")}`,'_self');
+            
             }
         
         

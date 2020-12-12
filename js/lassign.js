@@ -30,7 +30,8 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
 
       </div>
     </div>
-`}
+`
 
           document.getElementById("classe").innerHTML += html;
+         }
          });

@@ -12,7 +12,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
      hjcordiref.orderByChild('assname').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
-         if(newVoke.assname){
+         if(newVoke.email){
          
          var html = "";
           html +=`<div class="col-lg-4 col-sm-12 mt-4" >

@@ -17,6 +17,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
      hjcordiref.orderByChild('roomname').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
+         if(newVoke.roomname){
          var uri=`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}`;
          var res=encodeURI(uri);
          i=i+1;
@@ -55,7 +56,7 @@ id="myInput${i}">
 `
 
           document.getElementById("classe").innerHTML += html;
-        
+         }
      });
 
 var us=document.getElementById("user");

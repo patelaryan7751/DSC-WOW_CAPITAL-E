@@ -93,16 +93,8 @@ document.querySelector('#createroom').onclick = function(){
             if(document.getElementById("phnno").value!=null && document.getElementById("phnno").value!="" && 
               document.getElementById("phnno").value!=" " && document.getElementById("phnno1").value!=null && document.getElementById("phnno1").value!="" && 
               document.getElementById("phnno1").value!=" "){
+                getcredential();
                 function getcredential() {
-  
-   var fg= document.getElementById("kk");
-    if(fg.style.display==="none"){
-        fg.style.display="block";
-        
-        
-    }else{
-        fg.style.display="none";
-    }
 
 
  

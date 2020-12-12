@@ -11,11 +11,15 @@ apiKey: "AIzaSyDXQixVgedAZmg8uFHlbVK5LaZiqghf7tw",
   measurementId: "G-EZSBC50K62"
 };
 firebase.initializeApp(config);
+var i=0;
 
 var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
      hjcordiref.orderByChild('roomname').on("child_added", function(data){
           var newVoke = data.val();
          console.log(data.val());
+         var uri=`https://patelaryan7751.github.io/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}`;
+         var res=encodeURI(uri);
+         i=i+1;
          var html = "";
           html +=`<div class="col-lg-4 col-sm-12 mt-4" >
       
@@ -35,11 +39,21 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}`);
 
 
 <a  style="display: inline-block" href="https://patelaryan7751.github.io/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}" class="mt-2 btn btn-success">Open</a>
-<div class="col-7">
-<p>Link:https://patelaryan7751.github.io/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${newVoke.roomname}</p>
+<br>
+
+<input type="text" value="${res}" 
+id="myInput${i}">
+
+<div class="tooltip1">
+<button data-id="${i}" onclick="myFunction(this)" onmouseout="outFunc(this)" class="btn btn-info">
+  <span class="tooltiptext" id="myTooltip${i}">Copy to clipboard</span>
+  Copy text
+  </button>
 </div>
       </div>
-    </div>`
+    </div>
+`
+
           document.getElementById("classe").innerHTML += html;
         
      });

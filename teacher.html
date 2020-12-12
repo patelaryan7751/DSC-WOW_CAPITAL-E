@@ -9,7 +9,10 @@
      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="bootstrap/font-awesome/css/font-awesome.min.css">
      <link rel="stylesheet" href="bootstrap/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" type="text/css" href="css/teacher.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
             
 
         </head>
@@ -56,7 +59,22 @@
   <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
       
-       
+       <script>
+function myFunction(self) {
+  var copyText = document.getElementById(`myInput${self.getAttribute("data-id")}`);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById(`myTooltip${self.getAttribute("data-id")}`);
+  tooltip.innerHTML = "Copied";
+}
+
+function outFunc(self) {
+  var tooltip = document.getElementById(`myTooltip${self.getAttribute("data-id")}`);
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
         
          <script src="js/main4.js"></script>
       

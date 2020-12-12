@@ -40,7 +40,7 @@ function getRegisterToken(){
 messaging.getToken().then((currentToken) => {
   if (currentToken) {
       
-      var cordiRef = firebase.database().ref(`${sessionStorage.getItem("uids")}/fcmtokenteacher`);
+      var cordiRef = firebase.database().ref(`${sessionStorage.getItem("uids")}/fcmtokenteacher/`);
     var data={
         fcmtokenteacher:currentToken
         

@@ -93,8 +93,58 @@ document.querySelector('#createroom').onclick = function(){
             if(document.getElementById("phnno").value!=null && document.getElementById("phnno").value!="" && 
               document.getElementById("phnno").value!=" " && document.getElementById("phnno1").value!=null && document.getElementById("phnno1").value!="" && 
               document.getElementById("phnno1").value!=" "){
+                function getcredential() {
+  
+   var fg= document.getElementById("kk");
+    if(fg.style.display==="none"){
+        fg.style.display="block";
+        
+        
+    }else{
+        fg.style.display="none";
+    }
+
+
+ 
+    
+     
+         
+       var nhjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/student/${sessionStorage.getItem("uids")}`);
+     nhjcordiref.orderByChild("fcmtoken").on("child_added", function(data){
+          var newVoke= data.val();
+         console.log(data.val().fcmtoken);
+         $.ajax({
+             url:'https://fcm.googleapis.com/fcm/send',
+             method: 'POST',
+             headers:{
+                 
+                 'Content-Type':'application/json',
+                 'Authorization':'key=AAAA9xHhKfA:APA91bGrzRaoi6RqOk49fGi66kjvGHXh6Dc8vNL89SdCn4WMyGohj3wBNpp1_pFpQgkz0pG7xPhHt130Bpe2x3eQJTw7hzjvLt-3EYQm-w9tZ0CB_UCr05JSWz4-Ls65C2HL9mTHzSvn'
+             },
+             data:JSON.stringify({
+                'to':data.val().fcmtoken,'data':{'message':document.getElementById("phnno").value,'icon':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','image':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','click_action':`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${sessionStorage.getItem("roomi")}`}
+             }),
+             success: function(response){
+                 console.log(response);
+             },
+             error: function(xhr,status,error){
+                 console.log(xhr.error);
+             }
+             });
+         
+
+
+        
+window.alert("SENT!!!");
+    
+});
+     
+    
+    }
+     
                  var pq=document.getElementById("loadar");
     pq.style.display="none";
+                
             window.open(`${sessionStorage.getItem("link")}`,'_self');
             }
         

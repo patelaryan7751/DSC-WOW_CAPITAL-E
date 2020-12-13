@@ -20,19 +20,18 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
       <div class="card-body"  style="background-color: aliceblue">
 <div class="row">
 <div class="col-5">
-        <h5 class="card-field card-title" style="font-weight:700;">Eamil: ${newVoke.email}</h5>
+        <h5 class="card-field card-title" style="font-weight:700;">Email: ${newVoke.email}</h5>
 
 
 
 </div>
-<div class="col-7" style="margin-left=90%">
-       <img src="images/assigno.png" class="img-fluid" width="100px" height="25px"> 
-</div>
+
        </div> 
           
 
 
 <a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
+<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/evaluation.html?assname=${assgn}&email=${newVoke.email} class="mt-2 btn btn-waning">Evaluate</a>
 
       </div>
     </div>

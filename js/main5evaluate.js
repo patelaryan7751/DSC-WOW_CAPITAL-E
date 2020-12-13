@@ -58,6 +58,12 @@
 document.querySelector('#createroom').onclick = function(){
       var room = document.querySelector('#phnno').value;
      var assname = document.querySelector('#phnno1').value;
+    var url_string1=window.location.href;
+    var url_string=decodeURI(url_string1);
+         console.log(url_string);
+var url= new URL(url_string);
+var assign= url.searchParams.get("assname");
+var email= url.searchParams.get("email");
         if(room!=null && room!="" && room!=" " && assname!=null && assname!="" && assname!=" "){
         var pq=document.getElementById("loadar");
     pq.style.display="block";
@@ -80,13 +86,14 @@ document.querySelector('#createroom').onclick = function(){
              
     
         
-         var tgref=firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment/${document.getElementById("phnno1").value}/`);
+         var tgref=firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/Assigment/${assign}/result/`);
     var data={
-        link:document.getElementById("phnno").value,
-        assname:document.getElementById("phnno1").value
+        marks:document.getElementById("phnno").value,
+        remarks:document.getElementById("phnno1").value,
+        email:email
         
          }
-     tgref.set(data).then(function(){
+     tgref.push(data).then(function(){
         
         
     
@@ -101,11 +108,12 @@ console.log("fum");
     
      
          
-       var nhjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/msg/`);
+       var nhjcordiref= firebase.database().ref(`${sessionStorage.getItem("uidteach")}/${sessionStorage.getItem("roomi")}/msg/`);
      nhjcordiref.orderByChild("fcmtokenstudent").on("child_added", function(data){
           var newVoke= data.val();
          console.log(data.val().fcmtokenstudent);
-         $.ajax({
+         
+       $.ajax({
              url:'https://fcm.googleapis.com/fcm/send',
              method: 'POST',
              headers:{
@@ -114,7 +122,7 @@ console.log("fum");
                  'Authorization':'key=AAAA9xHhKfA:APA91bGrzRaoi6RqOk49fGi66kjvGHXh6Dc8vNL89SdCn4WMyGohj3wBNpp1_pFpQgkz0pG7xPhHt130Bpe2x3eQJTw7hzjvLt-3EYQm-w9tZ0CB_UCr05JSWz4-Ls65C2HL9mTHzSvn'
              },
              data:JSON.stringify({
-                'to':data.val().fcmtokenstudent,'data':{'message':document.getElementById("phnno1").value,'icon':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','image':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','click_action':`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/studass.html?uid=${sessionStorage.getItem("uids")}&roomname=${sessionStorage.getItem("roomi")}`}
+                'to':data.val().fcmtokenstudent,'data':{'message':`Marks:${document.getElementById("phnno")}`,'icon':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','image':'https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/images/assigno.png','click_action':`https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/teachass.html?uid=${sessionStorage.getItem("uids")}&roomname=${sessionStorage.getItem("roomi")}`}
              }),
              success: function(response){
                  console.log(response);
@@ -124,10 +132,8 @@ console.log("fum");
              }
              });
          
-
-
-        
 window.alert("SENT!!!");
+ 
          var pq=document.getElementById("loadar");
     pq.style.display="none";
           window.open(`${sessionStorage.getItem("link")}`,'_self');

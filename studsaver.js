@@ -42,11 +42,11 @@ function getRegisterToken(){
 messaging.getToken().then((currentToken) => {
   if (currentToken) {
       
-      var cordiRef = firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/student`);
+      var cordiRef = firebase.database().ref(`${sessionStorage.getItem("uidteach")}/${sessionStorage.getItem("roomi")}/msg/${sessionStorage.getItem("uids")}`);
     var data={
         fcmtokenstudent:currentToken
         }
-    cordiRef.update(data).then(function(){
+    cordiRef.set(data).then(function(){
       console.log(currentToken);
     sendTokenToServer(currentToken);
          

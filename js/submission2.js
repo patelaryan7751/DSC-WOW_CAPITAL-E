@@ -31,7 +31,7 @@ var hjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${ses
 
 
 <a  style="display: inline-block" href="${newVoke.link}" class="mt-2 btn btn-success">Open</a>
-<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/evaluation.html?assname=${assgn}&email=${newVoke.email} class="mt-2 btn btn-waning">Evaluate</a>
+<a  style="display: inline-block" href="https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/evaluate.html?assname=${assgn}&email=${newVoke.email}" class="mt-2 btn btn-waning">Evaluate</a>
 
       </div>
     </div>

@@ -108,7 +108,7 @@ console.log("fum");
     
      
          
-       var nhjcordiref= firebase.database().ref(`${sessionStorage.getItem("uidteach")}/${sessionStorage.getItem("roomi")}/msg/`);
+       var nhjcordiref= firebase.database().ref(`${sessionStorage.getItem("uids")}/${sessionStorage.getItem("roomi")}/msg/`);
      nhjcordiref.orderByChild("fcmtokenstudent").on("child_added", function(data){
           var newVoke= data.val();
          console.log(data.val().fcmtokenstudent);

@@ -6,12 +6,7 @@ function cretefass(){
      window.open('assigncreate.html','_self');
 
 }
-document.getElementById("createsub").addEventListener("click",cretefsub);
-function cretefsub(){
-    
-     window.open('submission.html','_self');
 
-}
 document.getElementById("home").addEventListener("click",cretefhom);
 function cretefhom(){
     

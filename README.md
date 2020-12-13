@@ -3,7 +3,7 @@
 Given below is the link for your reference for the idea. the link contains the presentation of our web app.
 __ Link __ https://drive.google.com/file/d/1cWNyK18HuNJd6lc6EC7be-yCKyOe_Huq/view?usp=sharing
 ---
-Given below is the link for your reference for the idea. the link contains the presentation of our web app.
+Given below is the link for  web app.
 https://patelaryan7751.github.io/DSC-WOW_CAPITAL-E/
 
 ----------------------------------------------------------------------------

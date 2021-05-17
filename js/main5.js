@@ -65,21 +65,7 @@ document.querySelector('#createroom').onclick = function(){
         var pqi=document.getElementById("demo1");
          pqi.textContent="";
  vali();
-            function vali(){
-
-     
-    
-  
-  
-    
-    
-    
-                
-
-            
-                
-             
-    
+            function vali(){    
         
          var tgref=firebase.database().ref(`${sessionStorage.getItem("uids")}/${document.getElementById("phnno").value}`);
     var data={

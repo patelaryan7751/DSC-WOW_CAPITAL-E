@@ -86,7 +86,7 @@ sessionStorage.clear();
  
 
      
-					return true
+					return true;
 				}
                         
             

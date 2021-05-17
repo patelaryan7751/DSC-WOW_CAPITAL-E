@@ -140,14 +140,6 @@ var pq=document.getElementById("loadar");
 
 });
        }
-   
-                                                           
-        
-           
-
-
-    
-
 
    } 
     else{

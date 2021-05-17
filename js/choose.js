@@ -21,14 +21,8 @@ firebase.auth().onAuthStateChanged(function(user) {
    
         window.open('index1.html','_self');
     }
-    
-   
-    
-    
-
-
-        
-    });
+ 
+});
 
 
 

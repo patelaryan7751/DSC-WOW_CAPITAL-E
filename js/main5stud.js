@@ -69,21 +69,7 @@ var assign= url.searchParams.get("assname");
         var pqi=document.getElementById("demo1");
          pqi.textContent="";
  vali();
-            function vali(){
-
-     
-    
-  
-  
-    
-    
-    
-                
-
-            
-                
-             
-    
+            function vali(){    
         
          var tgref=firebase.database().ref(`${sessionStorage.getItem("uidteach")}/${sessionStorage.getItem("roomi")}/Assigment/${assign}/submission/`);
     var data={
